@@ -18,6 +18,7 @@ function filterCategory(category) {
       title.textContent = "All Articles";
   }
 
+  
   // Hide or show articles based on category
   let articles = document.querySelectorAll(".project-item");
   articles.forEach(article => {
