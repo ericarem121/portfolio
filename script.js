@@ -18,7 +18,7 @@ function filterCategory(category) {
       title.textContent = "All Articles";
   }
 
-  
+
   // Hide or show articles based on category
   let articles = document.querySelectorAll(".project-item");
   articles.forEach(article => {
@@ -29,3 +29,18 @@ function filterCategory(category) {
     }
   });
 }
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdown = document.querySelector(".dropdown");
+  const dropbtn = document.querySelector(".dropbtn");
+
+  dropbtn.addEventListener("click", function () {
+    dropdown.classList.toggle("show"); // Toggle the dropdown visibility
+  });
+
+  // Close dropdown if clicking outside
+  document.addEventListener("click", function (event) {
+    if (!dropdown.contains(event.target)) {
+      dropdown.classList.remove("show");
+    }
+  });
+});
