@@ -1,0 +1,413 @@
+/* Resetting default margin, padding, and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  /* Header Section */
+  header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+  }
+  
+  header h1 {
+    font-size: 36px;
+    text-align: center;
+  }
+  
+/* Just added in */
+
+/* Container styles for each article */
+.project-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+/* Style for the article image */
+.project-img {
+  width: 150px; /* Adjust the size of the image */
+  height: auto;
+  margin-right: 20px; /* Space between the image and text */
+  border-radius: 8px;
+  object-fit: cover; /* Makes sure the image doesn't get stretched */
+}
+
+/* Article content area */
+.project-info {
+  flex: 1;
+}
+
+.project-info h4 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.project-info p {
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+.project-info a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.project-info a:hover {
+  text-decoration: underline;
+}
+
+.project-img-cropped {
+  width: 120px;      /* or any width you want */
+  height: 140px;     /* or any height you want */
+  object-fit: cover; /* this ensures the image fills the box and gets cropped */
+  margin-right: 20px; /* Space between the image and text */
+  border-radius: 8px;
+  display: block;    /* to make sure it behaves well in layouts */
+  object-position: 50% 30%; /* centers the image in the container */
+
+}
+
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+}
+
+nav ul li a:hover {
+  background-color: #575757;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  background-color: #333;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #575757;
+}
+
+/* Section Styling */
+.section {
+  padding: 40px 0;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.project {
+  background-color: #fff;
+  padding: 15px;
+  margin: 15px 0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project h3 {
+  margin: 0;
+  color: #333;
+}
+
+.project p {
+  color: #666;
+}
+
+.project a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.project a:hover {
+  text-decoration: underline;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Previous */ 
+
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  nav ul li {
+    display: inline;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Hero Section */
+  .hero {
+    background-color: #67aebe;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+  }
+  
+  .hero h2 {
+    font-size: 36px;
+  }
+  
+  .hero p {
+    font-size: 18px;
+    margin: 20px 0;
+  }
+  
+  .hero .btn {
+    background-color: #fff;
+    color: #67aebe;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  .hero .btn:hover {
+    background-color: #67aebe;
+    color: white;
+  }
+  
+  /* Section Styling */
+  .section {
+    padding: 50px 0;
+  }
+  
+  #about {
+    background-color: #ffffff;
+  }
+  
+  #journalism, #graphic-design {
+    background-color: #f4f4f9;
+  }
+  
+  .project {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .project p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .project a {
+    color: #67aebe;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .project a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Form Styling */
+  form {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  form input,
+  form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  form button {
+    background-color: #333;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  form button:hover {
+    background-color: #555;
+  }
+  
+  /* Footer Styling */
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .container {
+      width: 90%;
+    }
+  
+    header h1 {
+      font-size: 28px;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .hero h2 {
+      font-size: 28px;
+    }
+  
+    .hero p {
+      font-size: 16px;
+    }
+  
+    .hero .btn {
+      padding: 12px 25px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .project h3 {
+      font-size: 20px;
+    }
+  
+    .project p {
+      font-size: 14px;
+    }
+  
+    form input,
+    form textarea {
+      padding: 10px;
+      font-size: 14px;
+    }
+  
+    form button {
+      padding: 10px 18px;
+    }
+  }
+  
+  
