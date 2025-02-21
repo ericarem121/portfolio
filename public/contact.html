@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Contact | My Portfolio</title>
+  <link rel="stylesheet" href="public/style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>My Portfolio</h1>
+      <br />
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="journalism.html">Journalism</a></li>
+          <li><a href="graphic-design.html">Graphic Design</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <br />
+      <p>Have any questions or want to collaborate? Feel free to reach out!</p>
+      <br />
+      <form id="contact-form">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required />
+
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Enter your message" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+      <div id="response"></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Listen for form submission
+    document.getElementById('contact-form').addEventListener('submit', async (e) => {
+      e.preventDefault(); // Prevent the default form submission
+      
+      // Gather form data
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      try {
+        // Send a POST request to your backend server at /send
+        const response = await fetch('http://localhost:3000/send', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ name, email, message }),
+        });
+
+        // Parse the JSON response from the server
+        const data = await response.json();
+
+        // Show a success message or error based on the response
+        document.getElementById('response').innerText = data.message;
+      } catch (error) {
+        document.getElementById('response').innerText = 'There was an error sending your message.';
+        console.error('Error:', error);
+      }
+    });
+  </script>
+</body>
+</html>
