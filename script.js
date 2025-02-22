@@ -45,14 +45,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   dropbtn.addEventListener("click", function (event) {
     event.stopPropagation();
-    dropdownContent.style.display =
-      dropdownContent.style.display === "block" ? "none" : "block";
+    dropdownContent.classList.toggle("show");
   });
 
-  // Close dropdown if clicking outside
   document.addEventListener("click", function (event) {
     if (!dropbtn.contains(event.target)) {
-      dropdownContent.style.display = "none";
+      dropdownContent.classList.remove("show");
     }
   });
 });
+
