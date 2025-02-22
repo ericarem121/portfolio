@@ -53,3 +53,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+function filterCategory(category) {
+  let articles = document.querySelectorAll(".project-item");
+
+  articles.forEach(article => {
+    if (category === "all" || article.dataset.category === category) {
+      article.classList.add("show");
+    } else {
+      article.classList.remove("show");
+    }
+  });
+}
