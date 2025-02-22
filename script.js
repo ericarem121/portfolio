@@ -2,6 +2,7 @@
 function filterCategory(category) {
   let title = document.getElementById("article-title");
   
+  // Update title based on category
   switch (category) {
     case "concert":
       title.textContent = "Concert Reviews";
@@ -32,35 +33,26 @@ function filterCategory(category) {
 
 // Function to close the dropdown menu
 function closeDropdown() {
-  const dropdown = document.querySelector(".dropdown");
-  dropdown.classList.remove("show");
+  const dropdownContent = document.querySelector(".dropdown-content");
+  if (dropdownContent) {
+    dropdownContent.style.display = "none";
+  }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  const dropdown = document.querySelector(".dropdown");
   const dropbtn = document.querySelector(".dropbtn");
+  const dropdownContent = document.querySelector(".dropdown-content");
 
   dropbtn.addEventListener("click", function (event) {
-    // Prevent the click event from bubbling up to the document
     event.stopPropagation();
-    dropdown.classList.toggle("show");
+    dropdownContent.style.display =
+      dropdownContent.style.display === "block" ? "none" : "block";
   });
 
-  // Close the dropdown if clicking outside of it
+  // Close dropdown if clicking outside
   document.addEventListener("click", function (event) {
-    if (!dropdown.contains(event.target)) {
-      dropdown.classList.remove("show");
+    if (!dropbtn.contains(event.target)) {
+      dropdownContent.style.display = "none";
     }
   });
 });
-function filterCategory(category) {
-  let articles = document.querySelectorAll(".project-item");
-
-  articles.forEach(article => {
-    if (category === "all" || article.dataset.category === category) {
-      article.classList.add("show");
-    } else {
-      article.classList.remove("show");
-    }
-  });
-}
