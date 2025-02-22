@@ -19,10 +19,8 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Me</a></li>
           <li class="dropdown">
-            <!-- The dropbtn toggles the dropdown menu -->
             <a href="javascript:void(0)" class="dropbtn">Journalism</a>
             <div class="dropdown-content">
-              <!-- Clicking a link will filter articles and close the dropdown -->
               <a href="javascript:void(0)" onclick="filterCategory('all'); closeDropdown();">All Articles</a>
               <a href="javascript:void(0)" onclick="filterCategory('concert'); closeDropdown();">Concert Reviews</a>
               <a href="javascript:void(0)" onclick="filterCategory('opinion'); closeDropdown();">Opinion Editorials</a>
@@ -41,22 +39,32 @@
     <div class="container">
       <h2>My Journalism Work</h2>
       <br>
-      <!-- Article Title -->
       <h3 id="article-title">All Articles</h3>
       <br>
-      
-      <!-- Concert Reviews (Newest) -->
-      <div class="project-item" data-category="concert">
+
+      <!-- Articles Section -->
+
+      <!-- Concert Reviews -->
+      <div class="project-item show" data-category="concert">
         <img src="images/jonah-marais.jpg" alt="Jonah Marais Concert" class="project-img-cropped">
         <div class="project-info">
           <h4>"Jonah Marais’ Young & Optimistic: The Tour makes quick stop in Philadelphia"</h4>
-          <p>A look into a concert for Jonah Marais in Philadelphia, Pennsylvania, written for The Signal (Sept 18, 2024).</p>
+          <p>A look into a concert for Jonah Marais in Philadelphia, written for The Signal (Sept 18, 2024).</p>
           <a href="https://www.tcnjsignalnews.com/article/2024/09/jonah-marais-young-optimistic-the-tour-makes-quick-stop-in-philadelphia">Read Article</a>
         </div>
       </div>
 
+      <div class="project-item show" data-category="concert">
+        <img src="images/jack-and-jack.jpg" alt="Jack & Jack Concert" class="project-img">
+        <div class="project-info">
+          <h4>"Jack & Jack’s 'No Place Like Home' tour stops in Philadelphia"</h4>
+          <p>A look into a long-awaited tour from Jack & Jack, written for The Signal (Mar 29, 2024).</p>
+          <a href="https://www.tcnjsignalnews.com/article/2024/03/jack-jacks-no-place-like-home-tour-stops-in-philadelphia">Read Article</a>
+        </div>
+      </div>
+
       <!-- Opinion Editorials -->
-      <div class="project-item" data-category="opinion">
+      <div class="project-item show" data-category="opinion">
         <img src="images/metal-detectors.jpg" alt="Metal Detectors" class="project-img">
         <div class="project-info">
           <h4>"Metal detectors should be in all schools"</h4>
@@ -66,27 +74,17 @@
       </div>
 
       <!-- Event Reviews -->
-      <div class="project-item" data-category="event">
+      <div class="project-item show" data-category="event">
         <img src="images/disney-on-ice.jpeg" alt="Disney on Ice" class="project-img">
         <div class="project-info">
           <h4>"Disney on Ice makes an exciting stop in Trenton"</h4>
-          <p>A look into Disney On Ice that went to Trenton, New Jersey, written for The Signal (Apr 1, 2024).</p>
+          <p>A look into Disney On Ice in Trenton, written for The Signal (Apr 1, 2024).</p>
           <a href="https://www.tcnjsignalnews.com/article/2024/04/disney-on-ice-makes-an-exciting-stop-in-trenton">Read Article</a>
         </div>
       </div>
 
-      <!-- Concert Reviews (Older) -->
-      <div class="project-item" data-category="concert">
-        <img src="images/jack-and-jack.jpg" alt="Jack & Jack Concert" class="project-img">
-        <div class="project-info">
-          <h4>"Jack & Jack’s “No Place Like Home” tour stops in Philadelphia"</h4>
-          <p>A look into a long awaited tour from Jack & Jack that stopped in Philadelphia, Pennsylvania, written for The Signal (Mar 29, 2024).</p>
-          <a href="https://www.tcnjsignalnews.com/article/2024/03/jack-jacks-no-place-like-home-tour-stops-in-philadelphia">Read Article</a>
-        </div>
-      </div>
-
       <!-- News Articles -->
-      <div class="project-item" data-category="news">
+      <div class="project-item show" data-category="news">
         <img src="images/tiktok-ban.jpg" alt="TikTok Ban" class="project-img">
         <div class="project-info">
           <h4>"How a TikTok ban could impact small businesses and creators"</h4>
@@ -95,25 +93,24 @@
         </div>
       </div>
 
-      <!-- News Articles (Older) -->
-      <div class="project-item" data-category="news">
+      <div class="project-item show" data-category="news">
         <img src="images/justin-bieber.jpg" alt="Justin Bieber" class="project-img-cropped">
         <div class="project-info">
           <h4>"Justin Bieber returns to the stage after break"</h4>
-          <p>A look into Justin Bieber returning to perform on stage for the NHL All-Stars game, written for The Signal (Feb 9, 2024).</p>
+          <p>A look into Justin Bieber's performance at the NHL All-Stars game, written for The Signal (Feb 9, 2024).</p>
           <a href="https://www.tcnjsignalnews.com/article/2024/02/justin-bieber-returns-to-the-stage-after-break">Read Article</a>
         </div>
       </div>
 
-      <!-- News Article (Oldest) -->
-      <div class="project-item" data-category="news">
+      <div class="project-item show" data-category="news">
         <img src="images/katy-perry.jpg" alt="Katy Perry" class="project-img">
         <div class="project-info">
           <h4>"Katy Perry sells rights to her music catalog in $225 million deal"</h4>
-          <p>A deep dive into Katy Perry selling her music catalog in 2023, written for The Signal (Sep 27, 2023).</p>
+          <p>A deep dive into Katy Perry's music catalog sale, written for The Signal (Sept 27, 2023).</p>
           <a href="https://www.tcnjsignalnews.com/article/2023/09/katy-perry-sells-rights-to-her-music-catalog-in-225-million-deal">Read Article</a>
         </div>
       </div>
+
     </div>
   </section>
 
