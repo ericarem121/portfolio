@@ -54,3 +54,44 @@ document.addEventListener("DOMContentLoaded", function () {
   // Ensure all articles are visible on initial load
   filterCategory("all");
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const dropbtn = document.querySelector(".dropbtn");
+  const dropdownContent = document.querySelector(".dropdown-content");
+
+  dropbtn.addEventListener("click", function (event) {
+    event.stopPropagation();
+    dropdownContent.classList.toggle("show");
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", function (event) {
+    if (!dropbtn.contains(event.target) && !dropdownContent.contains(event.target)) {
+      dropdownContent.classList.remove("show");
+    }
+  });
+});
+function filterCategory(category) {
+  let title = document.getElementById("article-title");
+  let articles = document.querySelectorAll(".project-item");
+
+  // Change title based on category
+  const categoryTitles = {
+    concert: "Concert Reviews",
+    opinion: "Opinion Editorials",
+    event: "Event Reviews",
+    news: "News Articles",
+    all: "All Articles",
+  };
+  title.textContent = categoryTitles[category] || "All Articles";
+
+  // Show/hide articles correctly
+  articles.forEach(article => {
+    if (category === "all" || article.dataset.category === category) {
+      article.classList.add("show");
+      article.style.display = "flex";
+    } else {
+      article.classList.remove("show");
+      article.style.display = "none";
+    }
+  });
+}
