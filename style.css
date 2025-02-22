@@ -208,6 +208,13 @@ h2 {
   text-decoration: none;
 }
 
+.project-item {
+  display: none; /* Hide all by default */
+}
+
+.project-item.show {
+  display: flex; /* Show filtered items */
+}
 
 
 .project a:hover {
