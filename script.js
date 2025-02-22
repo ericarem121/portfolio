@@ -19,6 +19,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Ensure all articles are visible on initial load
   filterCategory("all");
+
+  // Add event listener to reset the filter when clicking the Journalism button
+  const journalismButton = document.getElementById("journalism-button");
+  if (journalismButton) {
+    journalismButton.addEventListener("click", function () {
+      filterCategory("all"); // Show all articles
+      console.log("Showing all articles");
+    });
+  }
 });
 
 function filterCategory(category) {
@@ -50,13 +59,6 @@ function filterCategory(category) {
     }
   });
 
-  closeDropdown();
-}
-
-
-function closeDropdown() {
-  const dropdownContent = document.querySelector(".dropdown-content");
-  if (dropdownContent) {
-    dropdownContent.classList.remove("show");
-  }
+  // Close dropdown menu after selecting a category
+  dropdownContent.classList.remove("show");
 }

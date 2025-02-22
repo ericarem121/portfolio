@@ -8,7 +8,7 @@
 /* General Styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
+  background-color: #fbfcfc;
   color: #333;
 }
 
@@ -20,8 +20,8 @@ body {
 
 /* HEADER - Restored to Previous Style */
 header {
-  background-color: #333;
-  color: white;
+  background-color: #a0c5e0;
+  color: black;
   padding: 20px 0;
   text-align: center;
 }
@@ -46,7 +46,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: white;
+  color: black;
   text-decoration: none;
   padding: 10px 15px;
   display: block;
@@ -65,7 +65,7 @@ nav ul li a:hover {
 }
 
 .dropbtn {
-  color: white;
+  color: black;
   padding: 10px 15px;
   text-decoration: none;
   display: block;
@@ -76,7 +76,7 @@ nav ul li a:hover {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: white;
+  background-color: #a0c5e0;
   min-width: 180px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 10;
@@ -111,7 +111,7 @@ h2 {
 
 /* JOURNALISM SECTION */
 #journalism {
-  background-color: #f4f4f9;
+  background-color: #fbfcfc;
 }
 
 /* ARTICLE CONTAINER */
@@ -119,10 +119,10 @@ h2 {
   display: none; /* Hide by default until filtered */
   align-items: center;
   margin-bottom: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid #dee7ee;
   padding: 15px;
   border-radius: 8px;
-  background-color: white;
+  background-color: #dee7ee;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -161,7 +161,7 @@ h2 {
 }
 
 .project-info a {
-  color: #007BFF;
+  color: #1e79de;
   text-decoration: none;
 }
 
@@ -171,15 +171,15 @@ h2 {
 
 /* FOOTER */
 footer {
-  background-color: #333;
-  color: white;
+  background-color: #a0c5e0;
+  color: black;
   padding: 20px 0;
   text-align: center;
 }
 
 /* CONTACT FORM */
 form {
-  background-color: white;
+  background-color: #dee7ee;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -204,8 +204,8 @@ form textarea {
 }
 
 form button {
-  background-color: #333;
-  color: white;
+  background-color: #a0c5e0;
+  color: black;
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
@@ -214,7 +214,7 @@ form button {
 }
 
 form button:hover {
-  background-color: #555;
+  background-color: grey;
 }
 
 /* RESPONSIVE DESIGN */
