@@ -37,8 +37,10 @@ function filterCategory(category) {
   // Show/hide articles correctly
   articles.forEach(article => {
     if (category === "all" || article.dataset.category === category) {
-      article.style.display = "flex"; // Ensure it's visible
+      article.classList.add("show");
+      article.style.display = "flex"; // Make sure they are visible
     } else {
+      article.classList.remove("show");
       article.style.display = "none"; // Hide unselected articles
     }
   });
