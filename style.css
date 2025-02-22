@@ -18,7 +18,7 @@ body {
   padding: 20px 0;
 }
 
-/* Header */
+/* HEADER - Restored to Previous Style */
 header {
   background-color: #333;
   color: white;
@@ -27,21 +27,22 @@ header {
 }
 
 header h1 {
-  font-size: 32px;
-  margin-bottom: 10px;
+  font-size: 36px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-/* Navigation */
+/* NAVIGATION - Matches Previous Style */
 nav ul {
   list-style-type: none;
+  padding: 0;
   display: flex;
   justify-content: center;
-  gap: 15px;
-  padding: 10px 0;
+  gap: 20px;
 }
 
 nav ul li {
-  position: relative;
+  display: inline;
 }
 
 nav ul li a {
@@ -49,16 +50,15 @@ nav ul li a {
   text-decoration: none;
   padding: 10px 15px;
   display: block;
-  background-color: #444;
-  border-radius: 5px;
-  transition: background 0.3s ease;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-  background-color: #575757;
+  text-decoration: underline;
 }
 
-/* Dropdown Menu */
+/* DROPDOWN MENU */
 .dropdown {
   position: relative;
   display: inline-block;
@@ -69,8 +69,7 @@ nav ul li a:hover {
   padding: 10px 15px;
   text-decoration: none;
   display: block;
-  background-color: #444;
-  border-radius: 5px;
+  font-weight: bold;
   cursor: pointer;
 }
 
@@ -78,10 +77,11 @@ nav ul li a:hover {
   display: none;
   position: absolute;
   background-color: white;
-  min-width: 160px;
+  min-width: 180px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 10;
   border-radius: 5px;
+  text-align: left;
 }
 
 .dropdown-content a {
@@ -89,7 +89,6 @@ nav ul li a:hover {
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  transition: background 0.3s ease;
 }
 
 .dropdown-content a:hover {
@@ -100,47 +99,53 @@ nav ul li a:hover {
   display: block;
 }
 
-/* Section Styling */
+/* SECTION STYLING */
 .section {
   padding: 40px 0;
-  text-align: center;
 }
 
 h2 {
-  font-size: 28px;
+  text-align: center;
   margin-bottom: 20px;
 }
 
+/* JOURNALISM SECTION */
+#journalism {
+  background-color: #f4f4f9;
+}
+
+/* ARTICLE CONTAINER */
 .project-item {
-  display: none; /* Initially hidden until filtered */
+  display: none; /* Hide by default until filtered */
   align-items: center;
   margin-bottom: 20px;
   border: 1px solid #ddd;
-  padding: 10px;
+  padding: 15px;
   border-radius: 8px;
   background-color: white;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
 }
 
 .project-item.show {
   display: flex; /* Show filtered items */
 }
 
-.project-item:hover {
-  transform: scale(1.02);
-}
-
-/* Article Image */
+/* ARTICLE IMAGE */
 .project-img, .project-img-cropped {
-  width: 150px;
-  height: auto;
+  width: 120px;
+  height: 140px;
+  object-fit: cover;
+  object-position: center top; /* Moves the focus to the top */
   margin-right: 20px;
   border-radius: 8px;
-  object-fit: cover;
+  display: block;
+}
+.katy-perry-img {
+  object-fit: contain;
 }
 
-/* Article Content */
+
+/* ARTICLE CONTENT */
 .project-info {
   flex: 1;
 }
@@ -158,23 +163,21 @@ h2 {
 .project-info a {
   color: #007BFF;
   text-decoration: none;
-  font-weight: bold;
 }
 
 .project-info a:hover {
   text-decoration: underline;
 }
 
-/* Footer */
+/* FOOTER */
 footer {
   background-color: #333;
   color: white;
   padding: 20px 0;
   text-align: center;
-  margin-top: 40px;
 }
 
-/* Contact Page */
+/* CONTACT FORM */
 form {
   background-color: white;
   padding: 20px;
@@ -214,21 +217,35 @@ form button:hover {
   background-color: #555;
 }
 
-/* Media Queries for Responsive Design */
+/* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
   .container {
       width: 90%;
   }
 
   header h1 {
-      font-size: 26px;
+      font-size: 28px;
   }
 
   nav ul {
       flex-direction: column;
-      text-align: center;
       gap: 10px;
+      text-align: center;
   }
+
+/* Fix Katy Perry image cropping */
+.katy-perry-img {
+  width: 150px;
+  height: auto; /* Allows full image height */
+  max-height: 220px; /* Expands to prevent cropping */
+  object-fit: scale-down; /* Ensures full image is visible */
+  object-position: center top; /* Moves the focus up */
+  border-radius: 8px;
+  display: block;
+}
+
+
+
 
   .project-item {
       flex-direction: column;
@@ -240,15 +257,27 @@ form button:hover {
       max-width: 250px;
       margin: 0 auto 10px;
   }
+
+  .project-info {
+      text-align: center;
+  }
 }
 
 @media (max-width: 480px) {
-  h2 {
-      font-size: 24px;
-  }
-
   .project-info h4 {
       font-size: 1em;
   }
+
+  .project-info p {
+      font-size: 0.85em;
+  }
+
+  form input,
+  form textarea {
+      font-size: 14px;
+  }
+
+  form button {
+      font-size: 14px;
+  }
 }
-  
