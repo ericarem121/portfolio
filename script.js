@@ -22,14 +22,16 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function filterCategory(category) {
-  console.log("Filtering category:", category);
   let title = document.getElementById("article-title");
-  let articles = document.querySelectorAll(".project-item");
 
+  // Prevent filtering if on the wrong page (e.g., graphic-design.html)
   if (!title) {
-    console.error("ERROR: #article-title NOT FOUND when filtering!");
+    console.warn("WARNING: filterCategory() called on the wrong page!");
     return;
   }
+
+  console.log("Filtering category:", category);
+  let articles = document.querySelectorAll(".project-item");
 
   const categoryTitles = {
     concert: "Concert Reviews",
@@ -50,6 +52,7 @@ function filterCategory(category) {
 
   closeDropdown();
 }
+
 
 function closeDropdown() {
   const dropdownContent = document.querySelector(".dropdown-content");
