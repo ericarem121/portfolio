@@ -1,16 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("JavaScript loaded");
-
-  let titleElement = document.getElementById("article-title");
-
-  if (!titleElement) {
-    console.error("ERROR: #article-title NOT FOUND in HTML!");
-    return; // Stop the script from running if the title is missing
-  } else {
-    console.log("SUCCESS: Found #article-title");
-  }
-
-  filterCategory("all");
+  // Ensure the function is available globally
+  window.filterCategory = filterCategory;
 
   // Dropdown menu functionality
   const dropbtn = document.querySelector(".dropbtn");
@@ -26,6 +16,9 @@ document.addEventListener("DOMContentLoaded", function () {
       dropdownContent.classList.remove("show");
     }
   });
+
+  // Ensure all articles are visible on initial load
+  filterCategory("all");
 });
 
 function filterCategory(category) {
