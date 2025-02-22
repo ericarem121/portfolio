@@ -1,31 +1,25 @@
 // Function to filter articles based on the selected category
 function filterCategory(category) {
   let title = document.getElementById("article-title");
-  
-  // Update title based on category
-  switch (category) {
-    case "concert":
-      title.textContent = "Concert Reviews";
-      break;
-    case "opinion":
-      title.textContent = "Opinion Editorials";
-      break;
-    case "event":
-      title.textContent = "Event Reviews";
-      break;
-    case "news":
-      title.textContent = "News Articles";
-      break;
-    default:
-      title.textContent = "All Articles";
-  }
-
-  // Show or hide articles based on the selected category
   let articles = document.querySelectorAll(".project-item");
+
+  // Change title based on category
+  const categoryTitles = {
+    concert: "Concert Reviews",
+    opinion: "Opinion Editorials",
+    event: "Event Reviews",
+    news: "News Articles",
+    all: "All Articles",
+  };
+  title.textContent = categoryTitles[category] || "All Articles";
+
+  // Show/hide articles based on the selected category
   articles.forEach(article => {
     if (category === "all" || article.dataset.category === category) {
-      article.style.display = "flex";
+      article.classList.add("show");
+      article.style.display = "flex"; // Ensures it's visible
     } else {
+      article.classList.remove("show");
       article.style.display = "none";
     }
   });
@@ -43,15 +37,20 @@ document.addEventListener("DOMContentLoaded", function () {
   const dropbtn = document.querySelector(".dropbtn");
   const dropdownContent = document.querySelector(".dropdown-content");
 
+  // Toggle dropdown menu
   dropbtn.addEventListener("click", function (event) {
     event.stopPropagation();
-    dropdownContent.classList.toggle("show");
+    dropdownContent.style.display =
+      dropdownContent.style.display === "block" ? "none" : "block";
   });
 
+  // Close dropdown if clicking outside
   document.addEventListener("click", function (event) {
     if (!dropbtn.contains(event.target)) {
-      dropdownContent.classList.remove("show");
+      dropdownContent.style.display = "none";
     }
   });
-});
 
+  // Ensure all articles are visible on initial load
+  filterCategory("all");
+});
