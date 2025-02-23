@@ -6,34 +6,35 @@ document.addEventListener("DOMContentLoaded", function () {
   const dropbtn = document.querySelector(".dropbtn");
   const dropdownContent = document.querySelector(".dropdown-content");
 
-  dropbtn.addEventListener("click", function (event) {
-    event.stopPropagation();
-    dropdownContent.classList.toggle("show");
-  });
+  if (dropbtn && dropdownContent) {
+    dropbtn.addEventListener("click", function (event) {
+      event.stopPropagation();
+      dropdownContent.classList.toggle("show");
+    });
+  
+    document.addEventListener("click", function (event) {
+      if (!dropbtn.contains(event.target) && !dropdownContent.contains(event.target)) {
+        dropdownContent.classList.remove("show");
+      }
+    });
+  }
 
-  document.addEventListener("click", function (event) {
-    if (!dropbtn.contains(event.target) && !dropdownContent.contains(event.target)) {
-      dropdownContent.classList.remove("show");
-    }
-  });
-
-  // Ensure all articles are visible on initial load
+  // Show all articles on initial load
   filterCategory("all");
 
-  // Add event listener to reset the filter when clicking the Journalism button
+  // Add event listener to reset filters when clicking the Journalism button
   const journalismButton = document.getElementById("journalism-button");
   if (journalismButton) {
-    journalismButton.addEventListener("click", function () {
-      filterCategory("all"); // Show all articles
-      console.log("Showing all articles");
+    journalismButton.addEventListener("click", function (event) {
+      event.preventDefault(); // Prevent default link behavior
+      filterCategory("all");  // Reset filter to show all articles
+      console.log("Journalism button clicked: Showing all articles");
     });
   }
 });
 
 function filterCategory(category) {
   let title = document.getElementById("article-title");
-
-  // Prevent filtering if on the wrong page (e.g., graphic-design.html)
   if (!title) {
     console.warn("WARNING: filterCategory() called on the wrong page!");
     return;
@@ -41,7 +42,6 @@ function filterCategory(category) {
 
   console.log("Filtering category:", category);
   let articles = document.querySelectorAll(".project-item");
-
   const categoryTitles = {
     concert: "Concert Reviews",
     opinion: "Opinion Editorials",
@@ -49,6 +49,7 @@ function filterCategory(category) {
     news: "News Articles",
     all: "All Articles",
   };
+
   title.textContent = categoryTitles[category] || "All Articles";
 
   articles.forEach(article => {
@@ -59,6 +60,7 @@ function filterCategory(category) {
     }
   });
 
-  // Close dropdown menu after selecting a category
-  dropdownContent.classList.remove("show");
+  if (dropdownContent = document.querySelector(".dropdown-content")) {
+    dropdownContent.classList.remove("show");
+  }
 }

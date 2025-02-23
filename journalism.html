@@ -3,24 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Journalism | My Portfolio</title>
+  <title>Journalism - My Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
+
   <header>
     <div class="container">
       <h1>My Portfolio</h1>
       <br>
-      <br>
-
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Me</a></li>
+          <!-- Dropdown for filtering articles (no "All Articles" option) -->
           <li class="dropdown">
-            <a href="journalism.html" id="journalism-button">Journalism</a>
+            <a href="javascript:void(0)" class="dropbtn" id="journalism-button">Journalism</a>
             <div class="dropdown-content">
               <a href="javascript:void(0)" onclick="filterCategory('concert'); closeDropdown();">Concert Reviews</a>
               <a href="javascript:void(0)" onclick="filterCategory('opinion'); closeDropdown();">Opinion Editorials</a>
@@ -35,125 +34,131 @@
     </div>
   </header>
 
-  <section id="journalism" class="section">
+  <main>
     <div class="container">
+      <br>
+      <h2>Journalism Articles</h2>
+      <br>
+      <!-- "All Articles" will be shown by default on page load -->
       <h3 id="article-title">All Articles</h3>
-<br>
-         <!-- Concert Reviews (Newest First) -->
-         <div class="project-item" data-category="concert">
-          <img src="images/jonah-marais.jpg" alt="Jonah Marais Concert" class="project-img">
-          <div class="project-info">
-              <h3>"Jonah Marais' Young & Optimistic: The Tour Stops in Philadelphia"</h3>
-              <p><strong>Date:</strong> September 12, 2024</p>
-              <p>A look into a concert for Jonah Marais in Philadelphia, written for Sweety High.</p>
-              <a href="https://www.sweetyhigh.com/read/jonah-marias-young-optimistic-tour">Read Article</a>
-          </div>
-      </div>
-
+      <br>
+      <!-- Articles (Sorted Newest First) -->
+      
+      <!-- 1. Concert Review from The Signal -->
       <div class="project-item" data-category="concert">
-          <img src="images/crash-adams.jpg" alt="Crash Adams & Big Time Rush" class="project-img">
-          <div class="project-info">
-              <h3>"Crash Adams and Big Time Rush Take Over Musikfest"</h3>
-              <p><strong>Date:</strong> August 15, 2024</p>
-              <p>A deep dive into Crash Adams and Big Time Rush's concert at Musikfest, written for Sweety High.</p>
-              <a href="https://www.sweetyhigh.com/read/crash-adams-and-big-time-rush">Read Article</a>
-          </div>
-      </div>
-      <div class="project-item show" data-category="concert">
         <img src="images/jonah-marais.jpg" alt="Jonah Marais Concert" class="project-img">
         <div class="project-info">
-          <h4>"Jonah Marais’ Young & Optimistic: The Tour makes quick stop in Philadelphia"</h4>
+          <h3>"Jonah Marais’ Young & Optimistic: The Tour makes quick stop in Philadelphia"</h3>
           <p><strong>Date:</strong> September 18, 2024</p>
-          <p>A look into a concert for Jonah Marais in Philadelphia, Pennsylvania, written for The Signal.</p>
+          <p>A look into a concert for Jonah Marais in Philadelphia, written for The Signal.</p>
           <a href="https://www.tcnjsignalnews.com/article/2024/09/jonah-marais-young-optimistic-the-tour-makes-quick-stop-in-philadelphia">Read Article</a>
         </div>
       </div>
-
-      <div class="project-item show" data-category="concert">
-        <img src="images/jack-and-jack.jpg" alt="Jack & Jack Concert" class="project-img">
+      
+      <!-- 2. Concert Review from Sweety High -->
+      <div class="project-item" data-category="concert">
+        <img src="images/jonah-marais.jpg" alt="Jonah Marais Concert" class="project-img">
         <div class="project-info">
-          <h4>"Jack & Jack’s 'No Place Like Home' tour stops in Philadelphia"</h4>
-          <p><strong>Date:</strong> March 29, 2024</p>
-          <p>A look into a long-awaited tour from Jack & Jack, written for The Signal.</p>
-          <a href="https://www.tcnjsignalnews.com/article/2024/03/jack-jacks-no-place-like-home-tour-stops-in-philadelphia">Read Article</a>
+          <h3>"Jonah Marais’ Young & Optimistic: The Tour Stops in Philadelphia"</h3>
+          <p><strong>Date:</strong> September 12, 2024</p>
+          <p>A look into a concert for Jonah Marais in Philadelphia, written for Sweety High.</p>
+          <a href="https://www.sweetyhigh.com/read/jonah-marias-young-optimistic-tour">Read Article</a>
         </div>
       </div>
-
-      <!-- Opinion Editorials -->
-      <div class="project-item show" data-category="opinion">
-        <img src="images/metal-detectors.jpg" alt="Metal Detectors" class="project-img">
+      
+      <!-- 3. Concert Review from Sweety High -->
+      <div class="project-item" data-category="concert">
+        <img src="images/crash-adams.jpg" alt="Crash Adams & Big Time Rush" class="project-img">
         <div class="project-info">
-          <h4>"Metal detectors should be in all schools"</h4>
-          <p><strong>Date:</strong> September 17, 2024</p>
-          <p>An opinion piece about the use of metal detectors in schools, written for The Signal.</p>
-          <a href="https://www.tcnjsignalnews.com/article/2024/09/opinion-metal-detectors-should-be-in-all-schools">Read Article</a>
+          <h3>"Crash Adams and Big Time Rush Take Over Musikfest"</h3>
+          <p><strong>Date:</strong> August 15, 2024</p>
+          <p>A deep dive into Crash Adams and Big Time Rush's concert at Musikfest, featured in Sweety High.</p>
+          <a href="https://www.sweetyhigh.com/read/crash-adams-and-big-time-rush">Read Article</a>
         </div>
       </div>
-
-      <!-- Event Reviews -->
-      <div class="project-item show" data-category="event">
+      
+      <!-- 4. News Article from Next Wave Magazine -->
+      <div class="project-item" data-category="news">
+        <img src="images/pardyalone.jpg" alt="Pardyalone Music" class="project-img">
+        <div class="project-info">
+          <h3>"Pardyalone Drops 2 New Tracks: 'Finally Breathing' & 'Running Away'"</h3>
+          <p><strong>Date:</strong> July 22, 2024</p>
+          <p>A look at the latest releases from Pardyalone, featured in Next Wave Magazine.</p>
+          <a href="https://www.nextwavemag.com/new-music/pardyalone-tracks">Read Article</a>
+        </div>
+      </div>
+      
+      <!-- 5. News Article from Next Wave Magazine -->
+      <div class="project-item" data-category="news">
+        <img src="images/kid-laroi-girls.jpg" alt="Kid Laroi GIRLS" class="project-img">
+        <div class="project-info">
+          <h3>"Review: Kid Laroi 'GIRLS'"</h3>
+          <p><strong>Date:</strong> July 22, 2024</p>
+          <p>A review of Kid Laroi's latest single ‘GIRLS’, featured in Next Wave Magazine.</p>
+          <a href="https://www.nextwavemag.com/new-music/review-kid-laroi-girls">Read Article</a>
+        </div>
+      </div>
+      
+      <!-- 6. News Article from Next Wave Magazine -->
+      <div class="project-item" data-category="news">
+        <img src="images/jax.jpeg" alt="Jax Album Review" class="project-img">
+        <div class="project-info">
+          <h3>"Review: 'Dear Joe' Album by Jax"</h3>
+          <p><strong>Date:</strong> July 22, 2024</p>
+          <p>A deep dive into Jax’s new album ‘Dear Joe’, featured in Next Wave Magazine.</p>
+          <a href="https://www.nextwavemag.com/new-music/review-dear-joe">Read Article</a>
+        </div>
+      </div>
+      
+      <!-- 7. Event Review from The Signal -->
+      <div class="project-item" data-category="event">
         <img src="images/disney-on-ice.jpeg" alt="Disney on Ice" class="project-img">
         <div class="project-info">
-          <h4>"Disney on Ice makes an exciting stop in Trenton"</h4>
+          <h3>"Disney on Ice makes an exciting stop in Trenton"</h3>
           <p><strong>Date:</strong> April 1, 2024</p>
           <p>A look into Disney On Ice in Trenton, written for The Signal.</p>
           <a href="https://www.tcnjsignalnews.com/article/2024/04/disney-on-ice-makes-an-exciting-stop-in-trenton">Read Article</a>
         </div>
       </div>
-
-         <!-- News Articles -->
-         <div class="project-item" data-category="news">
-          <img src="images/pardyalone.jpg" alt="Pardyalone Music" class="project-img">
-          <div class="project-info">
-              <h3>"Pardyalone Drops 2 New Tracks: 'Finally Breathing' & 'Running Away'"</h3>
-              <p><strong>Date:</strong> July 22, 2024</p>
-              <p>A look at the latest releases from Pardyalone, written for Next Wave Magazine.</p>
-              <a href="https://www.nextwavemag.com/new-music/pardyalone-tracks">Read Article</a>
-          </div>
-      </div>
-      <div class="project-item" data-category="news">
-        <img src="images/kid-laroi-girls.jpg" alt="Jax Album Review" class="project-img">
+      
+      <!-- 8. Concert Review from The Signal -->
+      <div class="project-item" data-category="concert">
+        <img src="images/jack-and-jack.jpg" alt="Jack & Jack Concert" class="project-img">
         <div class="project-info">
-            <h3>"Review: Kid Laroi 'GIRLS'”</h3>
-            <p><strong>Date:</strong> July 22, 2024</p>
-            <p>A deep dive into Kid Laroi’s new album ‘GIRLS’, written for Next Wave Magazine.</p>
-            <a href="https://www.nextwavemag.com/new-music/review-kid-laroi-girls">Read Article</a>
+          <h3>"Jack & Jack’s 'No Place Like Home' tour stops in Philadelphia"</h3>
+          <p><strong>Date:</strong> March 29, 2024</p>
+          <p>A look into a long-awaited tour from Jack & Jack, written for The Signal.</p>
+          <a href="https://www.tcnjsignalnews.com/article/2024/03/jack-jacks-no-place-like-home-tour-stops-in-philadelphia">Read Article</a>
         </div>
-    </div>
-
-      <div class="project-item" data-category="news">
-          <img src="images/jax-dear-joe.jpg" alt="Jax Album Review" class="project-img">
-          <div class="project-info">
-              <h3>"Review: 'Dear Joe' Album by Jax"</h3>
-              <p><strong>Date:</strong> July 22, 2024</p>
-              <p>A deep dive into Jax’s new album ‘Dear Joe’, written for Next Wave Magazine.</p>
-              <a href="https://www.nextwavemag.com/new-music/review-dear-joe">Read Article</a>
-          </div>
       </div>
-      <div class="project-item show" data-category="news">
+      
+      <!-- 9. News Article from The Signal -->
+      <div class="project-item" data-category="news">
         <img src="images/tiktok-ban.jpg" alt="TikTok Ban" class="project-img">
         <div class="project-info">
-          <h4>"How a TikTok ban could impact small businesses and creators"</h4>
+          <h3>"How a TikTok ban could impact small businesses and creators"</h3>
           <p><strong>Date:</strong> March 28, 2024</p>
           <p>A deep dive into how TikTok helps small businesses grow, written for The Signal.</p>
           <a href="https://www.tcnjsignalnews.com/article/2024/03/how-a-tiktok-ban-could-impact-small-businesses-and-creators">Read Article</a>
         </div>
       </div>
-
-      <div class="project-item show" data-category="news">
+      
+      <!-- 10. News Article from The Signal -->
+      <div class="project-item" data-category="news">
         <img src="images/justin-bieber.jpg" alt="Justin Bieber" class="project-img">
         <div class="project-info">
-          <h4>"Justin Bieber returns to the stage after break"</h4>
+          <h3>"Justin Bieber returns to the stage after break"</h3>
           <p><strong>Date:</strong> February 9, 2024</p>
           <p>A look into Justin Bieber's performance at the NHL All-Stars game, written for The Signal.</p>
           <a href="https://www.tcnjsignalnews.com/article/2024/02/justin-bieber-returns-to-the-stage-after-break">Read Article</a>
         </div>
       </div>
-
-      <div class="project-item show" data-category="news">
+      
+      <!-- 11. News Article from The Signal (Oldest) -->
+      <div class="project-item" data-category="news">
         <img src="images/katy-perry.jpg" alt="Katy Perry" class="project-img katy-perry-img">
         <div class="project-info">
-          <h4>"Katy Perry sells rights to her music catalog in $225 million deal"</h4>
+          <h3>"Katy Perry sells rights to her music catalog in $225 million deal"</h3>
           <p><strong>Date:</strong> September 27, 2023</p>
           <p>A deep dive into Katy Perry's music catalog sale, written for The Signal.</p>
           <a href="https://www.tcnjsignalnews.com/article/2023/09/katy-perry-sells-rights-to-her-music-catalog-in-225-million-deal">Read Article</a>
@@ -161,12 +166,14 @@
       </div>
 
     </div>
-  </section>
+  </main>
 
   <footer>
     <div class="container">
-      <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+      <p>© 2025 My Portfolio. All rights reserved.</p>
     </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
