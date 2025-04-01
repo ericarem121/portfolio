@@ -291,3 +291,20 @@ form button:hover {
 
 
 
+/* Style for the title button */
+.title-button {
+  text-decoration: none;
+  color: black;
+  font-size: 36px;
+  font-weight: bold;
+  display: inline-block;
+  padding:5px;
+  background-color: #a0c5e0; /* Light blue background */
+  cursor: pointer;
+}
+
+/* Prevent color change on hover */
+.title-button:hover {
+  color: black;
+  background-color: #a0c5e0;
+}
